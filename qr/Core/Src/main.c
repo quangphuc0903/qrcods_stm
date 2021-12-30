@@ -25,6 +25,8 @@
 #include "AGV_info.h" 
 #include "imu.h"
 #include "can_qr.h"
+#include "math.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,9 +67,12 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN 0 */
 float vel_agv;
 DIR dir_real;
-
+int32_t check;
 CAN_RxHeaderTypeDef RxHeader;
 uint8_t RxData[8];
+
+
+extern LOCALIZATION_DEF LOCALIZATION;
 /* USER CODE END 0 */
 
 /**
@@ -108,7 +113,7 @@ int main(void)
 	IMU_Init();
 	Kinco_Init();
 	enable_driver();	
-	uint32_t time_stamp = HAL_GetTick();
+
   /* USER CODE END 2 */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -120,8 +125,6 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		IMU_GET();
 		kinco_control(dir_real,vel_agv);
-		//HAL_Delay(20);
-		
 	}
 		
   /* USER CODE END 3 */

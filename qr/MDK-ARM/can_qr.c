@@ -1,6 +1,7 @@
 #include <can_qr.h>
 #include <main.h>
 #include <agv_info.h>
+#include "stdbool.h"
 
 #define Pi	3.14159265359
 	CAN_TxHeaderTypeDef txHeader;
@@ -80,12 +81,7 @@ int32_t convert_speeds(float vel)
 void kinco_control(DIR dir, float vel)	/* mm/s */
 {
 	uint8_t TxData[7] = {0xFD, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00};
-	txHeader.StdId =0x80;
-	txHeader.DLC	= 0;
-	if (HAL_CAN_AddTxMessage(&hcan1, &txHeader, NULL, &TxMailbox) != HAL_OK)
-	{
-		 Error_Handler ();
-	}
+	
 	switch(dir)
 	{
 		case Straigh:
@@ -97,10 +93,8 @@ void kinco_control(DIR dir, float vel)	/* mm/s */
 			
 			txHeader.StdId = 0x200 + DEVICE.ID_motion_left;
 			txHeader.DLC	= 7;
-			if (HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox) != HAL_OK)
-			{
-				 Error_Handler ();
-			}
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+		
 			
 			TxData[6]	= convert_speeds(0.0-vel)>>24;
 			TxData[5] = (convert_speeds(0.0-vel)&0x00ff0000)>>16;
@@ -109,10 +103,7 @@ void kinco_control(DIR dir, float vel)	/* mm/s */
 			
 			txHeader.StdId = 0x200 + DEVICE.ID_motion_right;
 			txHeader.DLC	= 7;
-			if (HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox) != HAL_OK)
-			{
-				 Error_Handler ();
-			}
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
 			break;
 		}
 		case Clockwise:
@@ -124,17 +115,12 @@ void kinco_control(DIR dir, float vel)	/* mm/s */
 			
 			txHeader.StdId = 0x200 + DEVICE.ID_motion_left;
 			txHeader.DLC	= 7;
-			if (HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox) != HAL_OK)
-			{
-				 Error_Handler ();
-			}
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+
 
 			txHeader.StdId = 0x200 + DEVICE.ID_motion_right;
 			txHeader.DLC	= 7;
-			if (HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox) != HAL_OK)
-			{
-				 Error_Handler ();
-			}
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
 			break;
 		}
 		case counter_clockwise:
@@ -146,19 +132,18 @@ void kinco_control(DIR dir, float vel)	/* mm/s */
 			
 			txHeader.StdId = 0x200 + DEVICE.ID_motion_left;
 			txHeader.DLC	= 7;
-			if (HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox) != HAL_OK)
-			{
-				 Error_Handler ();
-			}
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+			
 			txHeader.StdId = 0x200 + DEVICE.ID_motion_right;
 			txHeader.DLC	= 7;
-			if (HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox) != HAL_OK)
-			{
-				 Error_Handler ();
-			}
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+			
 			break;
 		}
 	}
+	txHeader.StdId = 0x80;
+	txHeader.DLC	= 0;
+	HAL_CAN_AddTxMessage(&hcan1, &txHeader, NULL, &TxMailbox);
 }
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
@@ -174,11 +159,13 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 			case 0x181:
 			{
 				LOCALIZATION.vel_left = (float)(((rxData[7]<<24)|(rxData[6]<<16)|(rxData[5]<<8)|rxData[4])*1875*(2*Pi*CHASSIC.R_Wheel)/(5120000*CHASSIC.gear*60));
+				LOCALIZATION.encoder_left = (rxData[3]<<24)|(rxData[2]<<16)|(rxData[1]<<8)|rxData[0];
 				break;
 			}
 			case 0x182:
 			{
 				LOCALIZATION.vel_right = (float)(((rxData[7]<<24)|(rxData[6]<<16)|(rxData[5]<<8)|rxData[4])*1875*(2*Pi*CHASSIC.R_Wheel)/(5120000*CHASSIC.gear*60));
+				LOCALIZATION.encoder_right = (rxData[3]<<24)|(rxData[2]<<16)|(rxData[1]<<8)|rxData[0];
 				break;
 			}
 		}

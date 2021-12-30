@@ -652,6 +652,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>AGV_control</GroupName>
+          <Files>
+            <File>
+              <FileName>AGV_Control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\AGV_Control\AGV_Control.h</FilePath>
+            </File>
+            <File>
+              <FileName>AGV_Control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\AGV_Control\AGV_Control.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
