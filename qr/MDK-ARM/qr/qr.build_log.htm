@@ -22,34 +22,23 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 E:\qrcods_stm\qr\MDK-ARM\qr.uvprojx
-Project File Date:  12/29/2021
+Project File Date:  12/30/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'qr'
 compiling can_qr.c...
-can_qr.c(99): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[6]	= convert_speeds(0.0-vel)>>24;
-can_qr.c(100): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[5] = (convert_speeds(0.0-vel)&0x00ff0000)>>16;
-can_qr.c(101): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[4] =	(convert_speeds(0.0-vel)&0x0000ff00)>>8;
-can_qr.c(102): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[3] = convert_speeds(0.0-vel)&0x000000ff;
-can_qr.c(128): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[6]	= convert_speeds(0.0-vel)>>24;
-can_qr.c(129): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[5] = (convert_speeds(0.0-vel)&0x00ff0000)>>16;
-can_qr.c(130): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[4] =	(convert_speeds(0.0-vel)&0x0000ff00)>>8;
-can_qr.c(131): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  			TxData[3] = convert_speeds(0.0-vel)&0x000000ff;
-can_qr.c: 8 warnings, 0 errors
-compiling main.c...
+can_qr.c(177): warning:  #223-D: function "abs" declared implicitly
+  	int Dl_tick = abs((LOCALIZATION.encoder_left-LOCALIZATION.encoder_left_last));
+can_qr.c(188): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	LOCALIZATION.angle = (Imu.Z_axis_azimuth*Pi/180.0);
+can_qr.c(194): warning:  #1-D: last line of file ends without a newline
+  }
+can_qr.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=12122 RO-data=450 RW-data=44 ZI-data=2436  
+Program Size: Code=16054 RO-data=738 RW-data=48 ZI-data=2432  
 FromELF: creating hex file...
-"qr\qr.axf" - 0 Error(s), 8 Warning(s).
+"qr\qr.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -73,7 +62,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

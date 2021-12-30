@@ -67,12 +67,12 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN 0 */
 float vel_agv;
 DIR dir_real;
-int32_t check;
-CAN_RxHeaderTypeDef RxHeader;
-uint8_t RxData[8];
+extern DEVICE_DEF DEVICE;
+extern CHASSIC_DEF CHASSIC;
+extern LOCALIZATION_DEF	LOCALIZATION;
+extern IMU_DATA_DEF	IMU_DATA;
 
 
-extern LOCALIZATION_DEF LOCALIZATION;
 /* USER CODE END 0 */
 
 /**
@@ -112,19 +112,20 @@ int main(void)
 	AGV_init();
 	IMU_Init();
 	Kinco_Init();
-	enable_driver();	
+	enable_driver(DEVICE);	
 
   /* USER CODE END 2 */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	
   while (1)
   {
     /* USER CODE END WHILE */
 		
     /* USER CODE BEGIN 3 */
 		IMU_GET();
-		kinco_control(dir_real,vel_agv);
+		
+		kinco_control(DEVICE,dir_real,vel_agv);
+		Odome(IMU_DATA);
 	}
 		
   /* USER CODE END 3 */

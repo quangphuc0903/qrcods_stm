@@ -13,16 +13,16 @@ typedef	struct
 	
 typedef	struct
 	{
-		uint32_t X;
-		uint32_t Y;
+		int32_t		X;
+		int32_t		Y;
 		float angle;
 		float vel_left;
 		float vel_right;
-		uint32_t encoder_left;
-		uint32_t encoder_right;
-		uint32_t encoder_left_last;
-		uint32_t encoder_right_last;
-		uint32_t time_stamp;
+		int32_t encoder_left;
+		int32_t encoder_right;
+		int32_t encoder_left_last;
+		int32_t encoder_right_last;
+		int32_t time_stamp;
 	} LOCALIZATION_DEF;
 	
 typedef	struct

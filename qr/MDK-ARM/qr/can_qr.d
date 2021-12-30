@@ -30,6 +30,7 @@ qr\can_qr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
 qr\can_qr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 qr\can_qr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 qr\can_qr.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-qr\can_qr.o: ../Core/Inc/main.h
 qr\can_qr.o: ..\AGV_info\agv_info.h
 qr\can_qr.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+qr\can_qr.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+qr\can_qr.o: ../Core/Inc/main.h

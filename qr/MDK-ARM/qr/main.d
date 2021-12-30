@@ -33,4 +33,5 @@ qr\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 qr\main.o: ..\AGV_info\AGV_info.h
 qr\main.o: ..\IMU\imu.h
 qr\main.o: ..\MDK-ARM\can_qr.h
+qr\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 qr\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

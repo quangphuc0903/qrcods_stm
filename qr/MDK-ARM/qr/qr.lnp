@@ -27,6 +27,7 @@
 "qr\trans_recieve_buff_control.o"
 "qr\imu.o"
 "qr\agv_info.o"
+"qr\agv_control.o"
 --strict --scatter "qr\qr.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
