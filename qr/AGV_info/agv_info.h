@@ -13,8 +13,8 @@ typedef	struct
 	
 typedef	struct
 	{
-		int32_t		X;
-		int32_t		Y;
+		int		X;
+		int		Y;
 		float angle;
 		float vel_left;
 		float vel_right;
@@ -44,4 +44,12 @@ typedef	struct
 		float R_Wheel;
 		uint8_t gear;
 	}CHASSIC_DEF;
+typedef struct
+{
+	char* label;
+	int X;
+	int Y;
+	float angle;
+}POSE;
+
 #endif

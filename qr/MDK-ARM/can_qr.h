@@ -16,6 +16,12 @@ typedef enum
 	Clockwise =2,
 	counter_clockwise=3
 } DIR;
+typedef enum
+{
+	M_left,
+	M_right,
+	M_all,
+}MOTION;
 
 void Kinco_Init(void);
 void enable_driver(DEVICE_DEF dev);

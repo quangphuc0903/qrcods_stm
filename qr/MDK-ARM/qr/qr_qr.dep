@@ -32,7 +32,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61825F56
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
-I (..\AGV_info\AGV_info.h)(0x61CD90F2)
+I (..\AGV_info\AGV_info.h)(0x61D24F2B)
 I (..\IMU\imu.h)(0x61CC1ABD)
 I (..\MDK-ARM\can_qr.h)(0x61CD8CD6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025318C)
@@ -674,7 +674,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61825F56
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
-I (..\AGV_info\agv_info.h)(0x61CD90F2)
+I (..\AGV_info\agv_info.h)(0x61D24F2B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025318C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60253188)
 I (../Core/Inc/main.h)(0x61CBE66F)
@@ -824,10 +824,10 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
 I (..\Modbus_Master\crc16.h)(0x59F182D7)
 I (..\Modbus_Master\word.h)(0x59F182D7)
 I (../Core/Inc/main.h)(0x61CBE66F)
-I (..\AGV_info\agv_info.h)(0x61CD90F2)
-F (..\AGV_info\agv_info.h)(0x61CD90F2)()
+I (..\AGV_info\agv_info.h)(0x61D24F2B)
+F (..\AGV_info\agv_info.h)(0x61D24F2B)()
 F (..\AGV_info\agv_info.c)(0x61CC3477)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\agv_info.o --omf_browse qr\agv_info.crf --depend qr\agv_info.d)
-I (..\AGV_info\agv_info.h)(0x61CD90F2)
+I (..\AGV_info\agv_info.h)(0x61D24F2B)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x61825F2F)
@@ -890,4 +890,4 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
 I (..\IMU\imu.h)(0x61CC1ABD)
-I (..\AGV_info\agv_info.h)(0x61CD90F2)
+I (..\AGV_info\agv_info.h)(0x61D24F2B)

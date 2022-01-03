@@ -81,7 +81,7 @@ int32_t convert_speeds(float vel)
 	return  (int32_t)((vel*5120000*CHASSIC.gear*60)/(1875*2*Pi*CHASSIC.R_Wheel));
 }
 
-void kinco_control(DEVICE_DEF dev,DIR dir, float vel)	/* mm/s */
+void kinco_control(DEVICE_DEF dev,DIR dir, float vel,MOTION mo)	/* mm/s */
 {
 	uint8_t TxData[7] = {0xFD, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00};
 	
@@ -192,3 +192,4 @@ void Odome(IMU_DATA_DEF Imu)
 	LOCALIZATION.encoder_right_last = LOCALIZATION.encoder_right;
 	HAL_Delay(200);
 }
+

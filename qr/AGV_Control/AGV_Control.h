@@ -4,5 +4,5 @@
 #include <imu.h>
 #include <agv_info.h>
 
-void control_AGV(LOCALIZATION_DEF loacalization);
+void control_AGV(POSE);
 #endif
