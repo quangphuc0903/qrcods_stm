@@ -35,3 +35,4 @@ qr\main.o: ..\IMU\imu.h
 qr\main.o: ..\MDK-ARM\can_qr.h
 qr\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 qr\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+qr\main.o: ..\AGV_Control\AGV_Control.h

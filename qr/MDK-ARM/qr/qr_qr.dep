@@ -1,7 +1,7 @@
 Dependencies for Project 'qr', Target 'qr': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f407xx.s)(0x61CBE671)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f407xx.lst --xref -o qr\startup_stm32f407xx.o --depend qr\startup_stm32f407xx.d)
-F (../Core/Src/main.c)(0x61CD914D)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\main.o --omf_browse qr\main.crf --depend qr\main.d)
+F (../Core/Src/main.c)(0x61D416D6)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\main.o --omf_browse qr\main.crf --depend qr\main.d)
 I (../Core/Inc/main.h)(0x61CBE66F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61825F56)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x61CBE66F)
@@ -32,11 +32,12 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61825F56
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
-I (..\AGV_info\AGV_info.h)(0x61D24F2B)
+I (..\AGV_info\AGV_info.h)(0x61D3F2B3)
 I (..\IMU\imu.h)(0x61CC1ABD)
-I (..\MDK-ARM\can_qr.h)(0x61CD8CD6)
+I (..\MDK-ARM\can_qr.h)(0x61D257E1)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025318C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60253188)
+I (..\AGV_Control\AGV_Control.h)(0x61D41B34)
 F (../Core/Src/stm32f4xx_it.c)(0x61CBE66F)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\stm32f4xx_it.o --omf_browse qr\stm32f4xx_it.crf --depend qr\stm32f4xx_it.d)
 I (../Core/Inc/main.h)(0x61CBE66F)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61825F56)
@@ -642,9 +643,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61825F56
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
-F (.\can_qr.h)(0x61CD8CD6)()
-F (.\can_qr.c)(0x61CD9414)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\can_qr.o --omf_browse qr\can_qr.crf --depend qr\can_qr.d)
-I (..\MDK-ARM\can_qr.h)(0x61CD8CD6)
+F (.\can_qr.h)(0x61D257E1)()
+F (.\can_qr.c)(0x61D40B34)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\can_qr.o --omf_browse qr\can_qr.crf --depend qr\can_qr.d)
+I (..\MDK-ARM\can_qr.h)(0x61D257E1)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x61825F2F)
@@ -674,7 +675,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61825F56
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
-I (..\AGV_info\agv_info.h)(0x61D24F2B)
+I (..\AGV_info\agv_info.h)(0x61D3F2B3)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025318C)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60253188)
 I (../Core/Inc/main.h)(0x61CBE66F)
@@ -824,10 +825,10 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
 I (..\Modbus_Master\crc16.h)(0x59F182D7)
 I (..\Modbus_Master\word.h)(0x59F182D7)
 I (../Core/Inc/main.h)(0x61CBE66F)
-I (..\AGV_info\agv_info.h)(0x61D24F2B)
-F (..\AGV_info\agv_info.h)(0x61D24F2B)()
+I (..\AGV_info\agv_info.h)(0x61D3F2B3)
+F (..\AGV_info\agv_info.h)(0x61D3F2B3)()
 F (..\AGV_info\agv_info.c)(0x61CC3477)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\agv_info.o --omf_browse qr\agv_info.crf --depend qr\agv_info.d)
-I (..\AGV_info\agv_info.h)(0x61D24F2B)
+I (..\AGV_info\agv_info.h)(0x61D3F2B3)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x61825F2F)
@@ -857,9 +858,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61825F56
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
-F (..\AGV_Control\AGV_Control.h)(0x61CD794F)()
-F (..\AGV_Control\AGV_Control.c)(0x61CD7AA4)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\agv_control.o --omf_browse qr\agv_control.crf --depend qr\agv_control.d)
-I (..\AGV_Control\AGV_Control.h)(0x61CD794F)
+F (..\AGV_Control\AGV_Control.h)(0x61D41B34)()
+F (..\AGV_Control\AGV_Control.c)(0x61D41C9B)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\agv_control.o --omf_browse qr\agv_control.crf --depend qr\agv_control.d)
+I (..\AGV_Control\AGV_Control.h)(0x61D41B34)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61825F56)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x61825F2F)
@@ -890,4 +891,39 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)
 I (..\IMU\imu.h)(0x61CC1ABD)
-I (..\AGV_info\agv_info.h)(0x61D24F2B)
+I (..\AGV_info\agv_info.h)(0x61D3F2B3)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60253188)
+I (..\MDK-ARM\can_qr.h)(0x61D257E1)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6025318C)
+F (.\communication.h)(0x61D2C464)()
+F (.\communication.c)(0x61D2D2A8)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\Modbus_Master -I ..\AGV_info -I ..\IMU -I ..\MDK-ARM -I ..\AGV_Control-I.\RTE\_qr-ID:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o qr\communication.o --omf_browse qr\communication.crf --depend qr\communication.d)
+I (../Core/Inc/main.h)(0x61CBE66F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x61825F56)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x61CBE66F)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x61825F57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x61825F56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x61825F56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x61825F56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61825F2F)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025318E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61825F2F)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61825F2F)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61825F2F)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61825F2F)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61825F56)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025318E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x61825F57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x61825F56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x61825F57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x61825F57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x61825F57)

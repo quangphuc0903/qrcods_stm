@@ -87,26 +87,50 @@ void kinco_control(DEVICE_DEF dev,DIR dir, float vel,MOTION mo)	/* mm/s */
 	
 	if(dir == Straigh)
 	{
-		TxData[6]	= convert_speeds(vel)>>24;
-		TxData[5] = (convert_speeds(vel)&0x00ff0000)>>16;
-		TxData[4] =	(convert_speeds(vel)&0x0000ff00)>>8;
-		TxData[3] = convert_speeds(vel)&0x000000ff;
+		if(mo == M_left)
+		{
+			TxData[6]	= convert_speeds(vel)>>24;
+			TxData[5] = (convert_speeds(vel)&0x00ff0000)>>16;
+			TxData[4] =	(convert_speeds(vel)&0x0000ff00)>>8;
+			TxData[3] = convert_speeds(vel)&0x000000ff;
+			
+			txHeader.StdId = 0x200 + dev.ID_motion_left;
+			txHeader.DLC	= 7;
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+		}
+		else if(mo == M_right)
+		{
+			TxData[6]	= convert_speeds(-vel)>>24;
+			TxData[5] = (convert_speeds(-vel)&0x00ff0000)>>16;
+			TxData[4] =	(convert_speeds(-vel)&0x0000ff00)>>8;
+			TxData[3] = convert_speeds(-vel)&0x000000ff;
+			
+			txHeader.StdId = 0x200 + dev.ID_motion_right;
+			txHeader.DLC	= 7;
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+		}
+		else
+		{
+			TxData[6]	= convert_speeds(vel)>>24;
+			TxData[5] = (convert_speeds(vel)&0x00ff0000)>>16;
+			TxData[4] =	(convert_speeds(vel)&0x0000ff00)>>8;
+			TxData[3] = convert_speeds(vel)&0x000000ff;
+			
+			txHeader.StdId = 0x200 + dev.ID_motion_left;
+			txHeader.DLC	= 7;
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+			
+			TxData[6]	= convert_speeds(-vel)>>24;
+			TxData[5] = (convert_speeds(-vel)&0x00ff0000)>>16;
+			TxData[4] =	(convert_speeds(-vel)&0x0000ff00)>>8;
+			TxData[3] = convert_speeds(-vel)&0x000000ff;
+			
+			txHeader.StdId = 0x200 + dev.ID_motion_right;
+			txHeader.DLC	= 7;
+			HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
+			HAL_Delay(1);
+		}
 		
-		txHeader.StdId = 0x200 + dev.ID_motion_left;
-		txHeader.DLC	= 7;
-		HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
-		
-	
-		
-		TxData[6]	= convert_speeds(-vel)>>24;
-		TxData[5] = (convert_speeds(-vel)&0x00ff0000)>>16;
-		TxData[4] =	(convert_speeds(-vel)&0x0000ff00)>>8;
-		TxData[3] = convert_speeds(-vel)&0x000000ff;
-		
-		txHeader.StdId = 0x200 + dev.ID_motion_right;
-		txHeader.DLC	= 7;
-		HAL_CAN_AddTxMessage(&hcan1, &txHeader, TxData, &TxMailbox);
-		HAL_Delay(1);
 	}
 	else if(dir == Clockwise)
 	{
@@ -174,22 +198,21 @@ float check;
 void Odome(IMU_DATA_DEF Imu)
 {
 	kinco_get_data();
-	int Dl_tick = abs((LOCALIZATION.encoder_left-LOCALIZATION.encoder_left_last));
-	int Dr_tick = abs((LOCALIZATION.encoder_right-LOCALIZATION.encoder_right_last));
+	int Dl_tick = abs((int)(LOCALIZATION.encoder_left-LOCALIZATION.encoder_left_last));
+	int Dr_tick = abs((int)(LOCALIZATION.encoder_right-LOCALIZATION.encoder_right_last));
 	 
-	float DL = (Dl_tick*2*Pi*CHASSIC.R_Wheel)/(10000*CHASSIC.gear);
-	float DR = (Dr_tick*2*Pi*CHASSIC.R_Wheel)/(10000*CHASSIC.gear);
+	float DL = (Dl_tick*2.0*Pi*CHASSIC.R_Wheel)/(10000*CHASSIC.gear);
+	float DR = (Dr_tick*2.0*Pi*CHASSIC.R_Wheel)/(10000*CHASSIC.gear);
 	float DC =  (DL+DR)/2;
 	
 	check = DR;
-	int32_t Delta_X = DC*sin(LOCALIZATION.angle);
-	int32_t Delta_Y = DC*cos(LOCALIZATION.angle);
+	int Delta_X = DC*sin(LOCALIZATION.angle);
+	int Delta_Y = DC*cos(LOCALIZATION.angle);
 	
 	LOCALIZATION.angle = (Imu.Z_axis_azimuth*Pi/180.0);
 	LOCALIZATION.X = LOCALIZATION.X + Delta_X;
 	LOCALIZATION.Y = LOCALIZATION.Y + Delta_Y;
 	LOCALIZATION.encoder_left_last = LOCALIZATION.encoder_left;
 	LOCALIZATION.encoder_right_last = LOCALIZATION.encoder_right;
-	HAL_Delay(200);
 }
 

@@ -27,7 +27,7 @@ void Kinco_Init(void);
 void enable_driver(DEVICE_DEF dev);
 void disable_driver(void);
 
-void kinco_control(DEVICE_DEF dev,DIR dir, float vel);
+void kinco_control(DEVICE_DEF dev,DIR dir, float vel,MOTION mo);
 void kinco_get_data(void);
 
 void Odome(IMU_DATA_DEF Imu);

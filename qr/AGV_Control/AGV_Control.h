@@ -4,5 +4,8 @@
 #include <imu.h>
 #include <agv_info.h>
 
-void control_AGV(POSE);
+void control_AGV_p2p(DEVICE_DEF dev, POSE pose, float vel);
+float PID_cal_angle(float Kp, float Ki, float Kd);
+
+void control_agv_distance(DEVICE_DEF dev, float distance, float dev_dis, float vel);
 #endif

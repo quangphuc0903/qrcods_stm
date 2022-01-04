@@ -667,6 +667,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>AGV_communication</GroupName>
+          <Files>
+            <File>
+              <FileName>communication.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\communication.h</FilePath>
+            </File>
+            <File>
+              <FileName>communication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\communication.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

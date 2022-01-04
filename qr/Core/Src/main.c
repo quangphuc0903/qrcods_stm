@@ -26,7 +26,7 @@
 #include "imu.h"
 #include "can_qr.h"
 #include "math.h"
-
+#include "AGV_Control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -113,8 +113,16 @@ int main(void)
 	IMU_Init();
 	Kinco_Init();
 	enable_driver(DEVICE);	
-
-  /* USER CODE END 2 */
+	kinco_control(DEVICE,Straigh,0,M_all);
+	POSE pos;
+	pos.X =0;
+	pos.Y =1000;
+	kinco_get_data();
+	HAL_Delay(2000);
+	LOCALIZATION.encoder_left_last = LOCALIZATION.encoder_left;
+	LOCALIZATION.encoder_right_last = LOCALIZATION.encoder_right;
+  HAL_Delay(1000);
+	/* USER CODE END 2 */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -122,10 +130,12 @@ int main(void)
     /* USER CODE END WHILE */
 		
     /* USER CODE BEGIN 3 */
-		IMU_GET();
+		//IMU_GET();
 		
-		kinco_control(DEVICE,dir_real,vel_agv);
-		Odome(IMU_DATA);
+		//control_AGV_p2p(DEVICE,pos,20);
+		control_agv_distance(DEVICE,1000,0.7,200);
+		HAL_Delay(10000);
+		//Odome(IMU_DATA);
 	}
 		
   /* USER CODE END 3 */

@@ -32,3 +32,6 @@ qr\agv_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 qr\agv_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 qr\agv_control.o: ..\IMU\imu.h
 qr\agv_control.o: ..\AGV_info\agv_info.h
+qr\agv_control.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+qr\agv_control.o: ..\MDK-ARM\can_qr.h
+qr\agv_control.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
