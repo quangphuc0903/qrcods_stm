@@ -133,7 +133,7 @@ int main(void)
 		//IMU_GET();
 		
 		//control_AGV_p2p(DEVICE,pos,20);
-		control_agv_distance(DEVICE,1000,0.7,200);
+		control_agv_distance(DEVICE,1000,0.7,600);
 		HAL_Delay(10000);
 		//Odome(IMU_DATA);
 	}

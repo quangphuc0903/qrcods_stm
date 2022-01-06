@@ -1,8 +1,10 @@
 #include <AGV_Control.h>
 #include <math.h>
 #include <can_qr.h>
+#include <modbus_master.h>
 
 #define Pi	3.14159265359
+uint8_t Request_camera[2] =  {0xC8,0x37};
 
 float error_01_angle=0, error_02_angle=0;
 float sum_error_angle,del_error_angle,duty_angle;
@@ -11,7 +13,7 @@ extern LOCALIZATION_DEF LOCALIZATION;
 extern IMU_DATA_DEF IMU_DATA;
 extern CHASSIC_DEF CHASSIC;
 
-
+extern UART_HandleTypeDef huart1;
 
 float PID_cal_angle(float Kp, float Ki, float Kd)
 {
@@ -53,6 +55,7 @@ void control_AGV_p2p(DEVICE_DEF dev, POSE pose, float vel)
 
 void control_agv_distance(DEVICE_DEF dev, float distance, float dev_dis, float vel)
 	{
+		// Run P2P
 		kinco_get_data();
 		int encoder_left = LOCALIZATION.encoder_left;
 		int count_ = LOCALIZATION.encoder_left;
@@ -74,9 +77,10 @@ void control_agv_distance(DEVICE_DEF dev, float distance, float dev_dis, float v
 		while(count_<(encoder_left+count_encoder))
 			{
 				kinco_get_data();
-				IMU_GET();
-				kinco_control(dev,Straigh,vel*pid_cal*(1+PID_cal_angle(0.1,0.01,0)),M_left);
-				kinco_control(dev,Straigh,vel*pid_cal*(1-PID_cal_angle(0.1,0.01,0)),M_right);
+				//IMU_GET();
+				LOCALIZATION.angle = (IMU_DATA.Z_axis_azimuth*Pi/180.0);
+				kinco_control(dev,Straigh,vel*pid_cal,M_left);
+				kinco_control(dev,Straigh,vel*pid_cal,M_right);
 				count_ = LOCALIZATION.encoder_left;
 				
 				if(count_ > (int)(encoder_left+count_encoder*dev_dis))
@@ -95,7 +99,11 @@ void control_agv_distance(DEVICE_DEF dev, float distance, float dev_dis, float v
 						{
 							pid_cal = 0.2;
 						}
-			HAL_Delay(20);
+			HAL_Delay(10);
 			}
 			kinco_control(dev,Straigh,0,M_all);	
+			
+			/*get local data matrix tag*/
+			//request tag
+
 	}

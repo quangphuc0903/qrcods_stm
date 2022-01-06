@@ -35,3 +35,7 @@ qr\agv_control.o: ..\AGV_info\agv_info.h
 qr\agv_control.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 qr\agv_control.o: ..\MDK-ARM\can_qr.h
 qr\agv_control.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+qr\agv_control.o: ..\Modbus_Master\modbus_master.h
+qr\agv_control.o: ..\Modbus_Master\bsp_board.h
+qr\agv_control.o: ..\Modbus_Master\crc16.h
+qr\agv_control.o: ..\Modbus_Master\word.h
