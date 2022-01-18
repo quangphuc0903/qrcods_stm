@@ -1,12 +1,17 @@
 #include <imu.h>
-#include <modbus_master.h>
-#include <main.h>
 #include <agv_info.h>
-
+#include <main.h>
 IMU_DATA_DEF IMU_DATA;
+
+/*----------------------------DATA FRAME FORMART-------------------
+					Identifler||Data Length||Address code||Command word||Data Domain||Check sum
+					 (1 byte)	||  (1 byte) ||  (1 byte)  ||  (1 byte)  ||           || (1 byte)\
+						 68H		||	
+		            								
+*/
 void IMU_Init(void)
 {
-	HAL_GPIO_WritePin(dr485_GPIO_Port,dr485_Pin,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(uart5,dr485_Pin,GPIO_PIN_RESET);
 	ModbusMaster_begin();
 	/*imu set zero*/
 	ModbusMaster_writeSingleRegister(1,16,255);

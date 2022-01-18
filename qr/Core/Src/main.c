@@ -27,6 +27,7 @@
 #include "can_qr.h"
 #include "math.h"
 #include "AGV_Control.h"
+#include "camera.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -71,6 +72,8 @@ extern DEVICE_DEF DEVICE;
 extern CHASSIC_DEF CHASSIC;
 extern LOCALIZATION_DEF	LOCALIZATION;
 extern IMU_DATA_DEF	IMU_DATA;
+
+CAMERA cam;
 
 
 /* USER CODE END 0 */
@@ -132,9 +135,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		//IMU_GET();
 		
-		//control_AGV_p2p(DEVICE,pos,20);
 		control_agv_distance(DEVICE,1000,0.7,600);
-		HAL_Delay(10000);
+		
+		cam = GET_CAMERA();
 		//Odome(IMU_DATA);
 	}
 		
@@ -235,7 +238,7 @@ static void MX_CAN1_Init(void)
 }
 
 /**
-  * @brief USART1 Initialization Function
+  * @brief USART1 Initialization Function       	
   * @param None
   * @retval None
   */

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "z4/3vGEYTbSftfLZDOyvBS/sbfDGcyoOa7oZXKxo4intCQ26+98b8uFXDwL/v/bXajKx0vmo3zLNGv23DGqSoA==",
+  "success": true,
+  "projectFilePath": "E:\\qrcods_stm\\Qrcode_app\\Qrcode_app\\Qrcode_app.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\quang\\.nuget\\packages\\syncfusion.diagram.base\\19.4.0.41\\syncfusion.diagram.base.19.4.0.41.nupkg.sha512",
+    "C:\\Users\\quang\\.nuget\\packages\\syncfusion.diagram.windows\\19.4.0.41\\syncfusion.diagram.windows.19.4.0.41.nupkg.sha512",
+    "C:\\Users\\quang\\.nuget\\packages\\syncfusion.licensing\\19.4.0.41\\syncfusion.licensing.19.4.0.41.nupkg.sha512",
+    "C:\\Users\\quang\\.nuget\\packages\\syncfusion.shared.base\\19.4.0.41\\syncfusion.shared.base.19.4.0.41.nupkg.sha512",
+    "C:\\Users\\quang\\.nuget\\packages\\syncfusion.shared.windows\\19.4.0.41\\syncfusion.shared.windows.19.4.0.41.nupkg.sha512"
+  ],
+  "logs": []
+}

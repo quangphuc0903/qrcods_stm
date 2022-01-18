@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\Modbus_Master;..\AGV_info;..\IMU;..\MDK-ARM;..\AGV_Control</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\Modbus_Master;..\AGV_info;..\IMU;..\MDK-ARM;..\AGV_Control;..\Camera</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -678,6 +678,21 @@
               <FileName>communication.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\communication.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Camera</GroupName>
+          <Files>
+            <File>
+              <FileName>camera.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Camera\camera.c</FilePath>
+            </File>
+            <File>
+              <FileName>camera.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Camera\camera.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,0 +1,108 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Phuc Nguyen Quang, Esa, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+E:\qrcods_stm\qr_std_imu\MDK-ARM\qr.uvprojx
+Project File Date:  01/10/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'qr'
+compiling stm32f4xx_it.c...
+../Core/Src/stm32f4xx_it.c(26): error:  #5: cannot open source input file "trans_recieve_buff_control.h": No such file or directory
+  #include "trans_recieve_buff_control.h"
+../Core/Src/stm32f4xx_it.c: 0 warnings, 1 error
+compiling stm32f4xx_hal_msp.c...
+compiling main.c...
+..\Camera\camera.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Src/main.c(119): warning:  #550-D: variable "pos"  was set but never used
+  	POSE pos;
+../Core/Src/main.c: 2 warnings, 0 errors
+compiling stm32f4xx_hal_flash.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_can.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_flash_ex.c...
+compiling stm32f4xx_hal_flash_ramfunc.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_tim_ex.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_hal_tim.c...
+compiling stm32f4xx_hal_exti.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal.c...
+compiling stm32f4xx_hal_uart.c...
+compiling agv_info.c...
+compiling camera.c...
+..\Camera\camera.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Camera\camera.c(2): error:  #5: cannot open source input file "modbus_master.h": No such file or directory
+  #include <modbus_master.h>
+..\Camera\camera.c: 1 warning, 1 error
+compiling AGV_Control.c...
+..\AGV_Control\AGV_Control.c(4): error:  #5: cannot open source input file "modbus_master.h": No such file or directory
+  #include <modbus_master.h>
+..\AGV_Control\AGV_Control.c: 0 warnings, 1 error
+compiling communication.c...
+communication.c(11): warning:  #1-D: last line of file ends without a newline
+  }
+communication.c: 1 warning, 0 errors
+compiling can_qr.c...
+can_qr.c(201): warning:  #223-D: function "abs" declared implicitly
+  	int Dl_tick = abs((int)(LOCALIZATION.encoder_left-LOCALIZATION.encoder_left_last));
+can_qr.c(212): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	LOCALIZATION.angle = (Imu.Z_axis_azimuth*Pi/180.0);
+can_qr.c: 2 warnings, 0 errors
+"qr\qr.axf" - 3 Error(s), 6 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_qr
+  D:\Users\quang\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  D:\Users\quang\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+      Include file:  CMSIS\Core\Include\tz_context.h
+Target not created.
+Build Time Elapsed:  00:00:17
+</pre>
+</body>
+</html>
